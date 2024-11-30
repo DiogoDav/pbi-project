@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Power BI Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            font-size: 24px; /* Reduzido o tamanho do título */
+        }
+        iframe {
+            width: 90%;
+            height: 80vh;
+            border: 1px solid #ddd;
+            transition: all 0.3s ease; /* Suaviza a transição */
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 20px;
+            cursor: pointer;
+            background-color: #0078d7;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #0056a1;
+        }
+        .maximized {
+            width: 100%;
+            height: 100vh; /* Expande para toda a altura da tela */
+        }
+    </style>
+</head>
+<body>
+    <h1>Relatório Power BI</h1>
+    <iframe id="powerbi-report" src="https://rebrand.ly/alt-estruturas" frameborder="0"></iframe>
+    <div>
+        <button id="refresh-button">Atualizar Dados</button>
+        <button id="maximize-button">Maximizar Relatório</button>
+    </div>
+
+    <script>
+        const refreshButton = document.getElementById('refresh-button');
+        const iframe = document.getElementById('powerbi-report');
+        const maximizeButton = document.getElementById('maximize-button');
+
+        // Atualiza os dados do Power BI
+        refreshButton.addEventListener('click', () => {
+            iframe.src = iframe.src; // Recarrega o iframe
+        });
+
+        // Maximiza o iframe
+        maximizeButton.addEventListener('click', () => {
+            iframe.classList.toggle('maximized'); // Alterna entre maximizar e normalizar
+        });
+    </script>
+</body>
+</html>
